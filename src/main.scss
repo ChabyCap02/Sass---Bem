@@ -1,6 +1,6 @@
-@import 'utils';
-@import 'config';
-@import 'button';
+@import 'base/utils';
+@import 'base/config';
+@import 'components/button';
 
 
 *{
@@ -36,26 +36,29 @@ body{
 .btn{
     @include btn(#000,#fff,'false');
 
+
     &--banner{
+        
         position: relative;
         top: 150px;
-        
+        border: 2px solid white;
         
     }
     &:hover{
         @include btn(#fff,#000,'true');
+        border: 2px solid black;
         
         
     }
     &--normal{
         @include btn(rgba(0, 0, 0, 0.568),#000,'true');
         outline: 1px solid white;
-        color: white;
+        
+
         &:hover{
             @include btn(rgb(255, 255, 255),rgba(36, 36, 36, 0.568),'true');
             box-shadow: 2px 2px 3px black;
-            outline: 1px solid black;
-
+            outline: 1px invert black;
 
         }
     }
@@ -71,6 +74,8 @@ body{
     }
 }
 .container__btn{
+    width: 100%;
+    margin: auto;
     text-align: center;
 }
 
@@ -162,6 +167,9 @@ body{
 
 .post{
     
+    .post__section{
+        width: 50%;
+    }
 
     width: 80%;
     padding: 20px;
@@ -215,6 +223,8 @@ body{
         width: 100%;
     }
     .post__description--full{
+        position: relative;
+        bottom: 60px;
         color: white;
         font-size: 1.3em;
         width: 70%;
@@ -224,10 +234,19 @@ body{
         background-color: #000;
         
     }
-    .post__button{
+    .post__button--full{
+        
         display: flex;
         justify-content: center;
         gap: 10px;
+        max-width: 30%;
+        margin: auto;
+        .btn{
+            color: white;
+            &:hover{
+                color: #000;
+            }
+        }
     }
 
 }
