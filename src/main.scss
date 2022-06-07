@@ -1,0 +1,260 @@
+@import 'utils';
+@import 'config';
+@import 'button';
+
+
+*{
+    @include resetpm;
+}
+
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+.nav{
+    
+    margin:0 20px ;
+    display: flex;
+    z-index: 1000;
+
+    &__element{
+        list-style: none;
+        padding:  15px 30px;
+        a{
+            color: $secondary-color;
+            text-decoration: none;
+            transition: all 0.2s;
+            &:hover{
+                color: white;
+                
+            }
+        }
+    }
+}
+.btn{
+    @include btn(#000,#fff,'false');
+
+    &--banner{
+        position: relative;
+        top: 150px;
+        
+        
+    }
+    &:hover{
+        @include btn(#fff,#000,'true');
+        
+        
+    }
+    &--normal{
+        @include btn(rgba(0, 0, 0, 0.568),#000,'true');
+        outline: 1px solid white;
+        color: white;
+        &:hover{
+            @include btn(rgb(255, 255, 255),rgba(36, 36, 36, 0.568),'true');
+            box-shadow: 2px 2px 3px black;
+            outline: 1px solid black;
+
+
+        }
+    }
+    &--green{
+        @include btn(rgb(132, 241, 132),#000,'true');
+        
+        
+        &:hover{
+            @include btn(rgb(37, 94, 44),rgb(255, 255, 255),'true');
+            box-shadow: 2px 2px 3px black;
+            
+        }
+    }
+}
+.container__btn{
+    text-align: center;
+}
+
+.header{
+    position: relative;
+    height: 100vh;
+    
+    
+    &__nav{
+        backdrop-filter: blur(8px);
+
+        z-index: 100;
+        position: sticky;
+        top: 0;
+        height: 45px;
+        padding: 0 10px;
+        background-color: rgba(59, 59, 59, 0.555);
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        color: $secondary-color;
+        font-size: 0.8em;
+        
+        >:hover{
+            color: white;
+            
+        }
+        .nav--responsive{
+            display: none;
+        }
+        
+    }
+    
+
+}
+
+
+
+.ad{
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+    &__logo{
+        z-index: -1;
+        width: 150px; 
+        filter: grayscale(100%);
+        margin: 0 20px;
+    }
+
+    &__text{
+        max-width: 700px;
+        color: $link-color;
+        text-decoration: none;
+        transition: all 0.2s;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.header__banner{
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0),rgb(0, 0, 0)), url('/public/img/bg-header.png');
+    background-position: center;
+    background-size: cover;
+    
+    height: 90%;
+    display: flex;
+    align-items: center;
+
+    .header__text{
+        font-size: 1.5em;
+        font-weight: bolder;
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        filter: brightness(600%);
+        color: white;
+    
+        h2 i{
+            padding: 0 10px;
+        }
+    }
+}
+// Main
+
+.post{
+    
+
+    width: 80%;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+
+    .post__title{
+        font-size: 2.6em;
+    }
+    .post__img{
+        width: 60%;
+        margin: 10px auto;
+
+    }
+
+    .post__text{
+        display: flex;
+        justify-content: space-evenly;
+        .post__description{
+            max-width: 300px;
+        }
+        .post__button{
+            display: flex;
+            justify-content: space-evenly;
+            gap: 10px;
+        }
+    }
+
+    
+}
+.post--full{
+    text-align: center;
+    padding: 20px 0;
+    
+    background-color: #F5F5F7;
+    .post__title{
+        text-align: center;
+        padding: 20px;
+        font-size: 3em;
+        
+        &--footer{
+            padding: 20px;
+            font-size: 3em;
+            
+            color: white;
+        }
+    }
+    .post__img{
+        width: 100%;
+    }
+    .post__description--full{
+        color: white;
+        font-size: 1.3em;
+        width: 70%;
+        margin: auto;
+    }
+    &--footer{
+        background-color: #000;
+        
+    }
+    .post__button{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+}
+
+
+@media (max-width: 844px) {
+    .btn{
+        &--banner{
+            top: 40px;
+        }
+    }
+}
+
+@media(max-width: 1080px){
+    .header{
+        
+        &__nav{
+            justify-content: space-between;
+            font-size: 1.3em;
+            .nav{
+
+                display: none;
+            }
+            .nav--responsive{
+                display: block;
+            }
+    
+        }
+    }
+}
