@@ -64,7 +64,7 @@ body{
     }
     &--green{
         @include btn(rgb(132, 241, 132),#000,'true');
-        
+        border: none;
         
         &:hover{
             @include btn(rgb(37, 94, 44),rgb(255, 255, 255),'true');
@@ -197,6 +197,7 @@ body{
             display: flex;
             justify-content: space-evenly;
             gap: 10px;
+            
         }
     }
 
@@ -204,7 +205,7 @@ body{
 }
 .post--full{
     text-align: center;
-    padding: 20px 0;
+    padding: 70px 0;
     
     background-color: #F5F5F7;
     .post__title{
@@ -251,6 +252,71 @@ body{
 
 }
 
+.footer{
+    background-color:   #1d1d1f;
+    padding: 10px 50px;
+    font-size: 0.8em;
+    hr{
+        border: none;
+        height: 1px;
+        background-color: #646464;
+    }
+    &__text{
+        color: #646464;
+        
+        text-align: left;
+        margin: auto;
+        padding: 10px;
+        
+    }
+    &__nav{
+        .nav{
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            &__list{
+                
+            
+                
+            }
+            &__listElement{
+
+                
+            }
+            &__item{
+                list-style: none;
+                
+                
+                a{
+                    display: block;
+                    padding: 10px 0;
+                    color: rgb(126, 126, 126);
+                    text-decoration: none;
+                    
+                }
+                &--first{
+                    a{
+
+                        text-decoration: none;
+                        color: #fff;
+                    }
+                }
+
+                
+            }
+        }
+    }
+    &__copyright{
+        p{
+            color: rgb(126, 126, 126);
+            padding: 10px;
+            span{
+                color: $link-color;
+            }
+        }
+    }
+}
+
 
 @media (max-width: 844px) {
     .btn{
@@ -259,7 +325,31 @@ body{
         }
     }
 }
-
+@media(max-width: 1070px){
+    .post{
+        flex-direction: column;
+        text-align: center;
+        &__section{
+            display: block;
+            
+            margin: 20px auto;
+        }
+        &__text{
+            
+            flex-direction: column;
+            
+        }
+        &__description{
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            p{
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
 @media(max-width: 1080px){
     .header{
         
